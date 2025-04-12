@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
-import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { LAMPORTS_PER_SOL ,  Transaction} from "@solana/web3.js";
 
 const ShowBalance = () => {
   const { connection } = useConnection();
@@ -15,8 +15,17 @@ const ShowBalance = () => {
   };
 
   useEffect(() => {
-    getUserBalance();
+    if (!publicKey) return;
+
+    getUserBalance(); // Initial fetch
+
+    const interval = setInterval(() => {
+      getUserBalance();
+    }, 5000); // Poll every 5 seconds
+
+    return () => clearInterval(interval);
   }, [publicKey]);
+
 
   return (
     <div className=" text-white ">

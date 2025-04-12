@@ -2,12 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ArrowDownUp, Settings, Coins, Send } from "lucide-react";
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import {
-  PublicKey,
-  LAMPORTS_PER_SOL,
-  Transaction,
-  SystemProgram,
-} from "@solana/web3.js";
 import AirDrop from "./AirDrop";
 import SendTokens from "./SendTokens";
 import ShowBalance from "./ShowBalance";
