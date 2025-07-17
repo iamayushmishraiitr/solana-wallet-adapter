@@ -24,10 +24,10 @@ export const SwapInterface = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center w-[500px] h-full">
-      <div className="w-[480px] bg-[#191b1f] rounded-3xl p-4 shadow-lg">
+    <div className="flex flex-col items-center justify-center w-[500px] overflow-y-hidden h-full ">
+     <div className="w-[480px] bg-[#191b1f] rounded-3xl p-4 shadow-lg ">
         <div className="flex justify-between items-center mb-4">
-          <div className="flex gap-2">
+          <div className="flex gap-2 relative ">
             <TabButton tab="airdrop" icon={Coins} label="Airdrop" />
             <TabButton tab="send" icon={Send} label="Send" />
             {activeTab === "send" && publicKey && (
@@ -42,8 +42,8 @@ export const SwapInterface = () => {
       </div>
 
       {/* Centered button */}
-      <div className="flex justify-center mt-4 w-full gap-5 items-center">
-        {publicKey && <h1 className="text-white text-2xl">From: {publicKey.toBase58()}</h1>}
+      <div className="flex flex-col justify-center mt-4 w-full gap-5 items-center">
+        {publicKey && <h1 className="text-white font-bold">From: {publicKey.toBase58()}</h1>}
         <WalletMultiButton
           style={{
             backgroundColor: "#2172e5",

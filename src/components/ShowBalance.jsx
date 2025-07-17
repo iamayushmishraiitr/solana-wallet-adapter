@@ -28,9 +28,15 @@ const ShowBalance = () => {
 
 
   return (
-    <div className=" text-white ">
-      Balance: {balance?.toFixed(5)} SOL
-    </div>
+    <div className="text-white absolute top-1/2 ml-[15rem] transform -translate-y-1/2">
+   <h1>
+  <span className="whitespace-nowrap">
+    Balance: {balance?.toFixed(3)} SOL
+  </span>
+</h1>
+
+  </div>
+  
   );
 };
 
